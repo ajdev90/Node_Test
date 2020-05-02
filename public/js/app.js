@@ -9,7 +9,7 @@ thisForm.addEventListener('submit',(e)=>{
     e.preventDefault();
     const location = searchInput.value;
     console.log('testing='+location);
-    fetch('http://localhost:5000/weather?location='+location).then((response) => {
+    fetch('/weather?location='+location).then((response) => {
     response.json().then((data) =>{
         if(data.error){
             console.log(data.error);
