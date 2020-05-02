@@ -11,6 +11,7 @@ const templatePath = path.join(__dirname,'../templates/views');
 const partilaPath = path.join(__dirname,'../templates/partials');
 const foreCast = require('../util/foreCast');
 const geoCode = require('../util/geoCode');
+const port = process.env.PORT || 5000;
 
 //static directory
 app.use(express.static(publicDirName));
@@ -79,6 +80,6 @@ app.get('/*',(req,res) => {
     res.send("404, Not found");
 });
 
-app.listen(5000, () => {
+app.listen(port, () => {
     console.log('server started in port 5000');
 });
